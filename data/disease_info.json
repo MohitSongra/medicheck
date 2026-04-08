@@ -1,0 +1,74 @@
+{
+  "Common_Cold": {
+    "description": "A viral infection of the upper respiratory tract affecting the nose and throat. Usually harmless and resolves within 7-10 days.",
+    "suggested_action": "Rest, stay hydrated, use OTC cold remedies. See a doctor if symptoms persist beyond 10 days."
+  },
+  "Influenza": {
+    "description": "A contagious respiratory illness caused by influenza viruses. More severe than the common cold with sudden onset.",
+    "suggested_action": "Rest, fluids, and antiviral medications if caught early. Seek medical care for high-risk individuals."
+  },
+  "COVID-19": {
+    "description": "Respiratory illness caused by the SARS-CoV-2 virus. Symptoms range from mild to severe and may include loss of taste/smell.",
+    "suggested_action": "Isolate immediately, get tested, monitor oxygen levels. Seek emergency care for breathing difficulties."
+  },
+  "Pneumonia": {
+    "description": "An infection that inflames air sacs in one or both lungs, which may fill with fluid. Can be life-threatening.",
+    "suggested_action": "Seek medical attention promptly. Antibiotics for bacterial pneumonia. Hospitalization may be required."
+  },
+  "Bronchitis": {
+    "description": "Inflammation of the bronchial tubes that carry air to the lungs, often producing persistent cough with mucus.",
+    "suggested_action": "Rest, fluids, humidifier use. See a doctor if cough lasts more than 3 weeks or produces blood."
+  },
+  "Asthma": {
+    "description": "A chronic condition where airways narrow, swell, and produce extra mucus, making breathing difficult.",
+    "suggested_action": "Use prescribed inhalers. Develop an asthma action plan with your doctor. Avoid known triggers."
+  },
+  "Allergic_Rhinitis": {
+    "description": "Inflammation of the nasal passages caused by an allergic response to airborne substances like pollen or dust.",
+    "suggested_action": "Avoid allergens, use antihistamines or nasal corticosteroids. Consider allergy testing."
+  },
+  "Sinusitis": {
+    "description": "Inflammation or swelling of the tissue lining the sinuses, often following a cold, causing facial pain and congestion.",
+    "suggested_action": "Use saline nasal spray, decongestants, and warm compresses. See a doctor if symptoms last >10 days."
+  },
+  "Tuberculosis": {
+    "description": "A serious bacterial infection primarily affecting the lungs, caused by Mycobacterium tuberculosis. Highly contagious.",
+    "suggested_action": "Seek immediate medical evaluation. TB requires a 6-9 month antibiotic regimen. Notify close contacts."
+  },
+  "Malaria": {
+    "description": "A life-threatening mosquito-borne disease caused by Plasmodium parasites. Characterized by cyclical fever and chills.",
+    "suggested_action": "Seek urgent medical treatment. Antimalarial drugs are essential. Prevention includes mosquito nets and repellents."
+  },
+  "Dengue_Fever": {
+    "description": "A mosquito-borne viral infection causing high fever, severe joint/muscle pain, and potentially hemorrhagic complications.",
+    "suggested_action": "Seek medical care immediately. Stay hydrated, use acetaminophen for pain. Avoid aspirin and NSAIDs."
+  },
+  "Typhoid_Fever": {
+    "description": "A bacterial infection caused by Salmonella typhi, spread through contaminated food and water.",
+    "suggested_action": "Seek medical diagnosis and antibiotic treatment. Maintain strict hygiene. Vaccination is recommended for travelers."
+  },
+  "Gastroenteritis": {
+    "description": "Inflammation of the stomach and intestines, typically from viral or bacterial infection, causing vomiting and diarrhea.",
+    "suggested_action": "Stay hydrated with oral rehydration solutions. Eat bland foods. See a doctor if symptoms are severe or prolonged."
+  },
+  "Urinary_Tract_Infection": {
+    "description": "An infection in any part of the urinary system — kidneys, ureters, bladder, or urethra. Most common in the bladder.",
+    "suggested_action": "See a doctor for antibiotics. Drink plenty of water. Seek urgent care if fever develops or pain worsens."
+  },
+  "Migraine": {
+    "description": "A neurological condition characterized by intense, debilitating headaches often accompanied by nausea and light sensitivity.",
+    "suggested_action": "Rest in a dark, quiet room. Take prescribed migraine medication. Track triggers to prevent future episodes."
+  },
+  "Hypertension": {
+    "description": "Persistently elevated blood pressure that increases risk of heart disease, stroke, and kidney problems. Often asymptomatic.",
+    "suggested_action": "Monitor blood pressure regularly. Adopt a low-sodium diet, exercise, and take prescribed medications."
+  },
+  "Diabetes_Type_2": {
+    "description": "A chronic metabolic condition where the body becomes resistant to insulin or doesn't produce enough, causing high blood sugar.",
+    "suggested_action": "Consult an endocrinologist. Monitor blood sugar, maintain a healthy diet, exercise regularly, and take prescribed medications."
+  },
+  "Anemia": {
+    "description": "A condition where the blood lacks enough healthy red blood cells to carry adequate oxygen to tissues, causing fatigue.",
+    "suggested_action": "Get blood tests to determine cause. Iron supplements, dietary changes, or treating underlying conditions may be needed."
+  }
+}
