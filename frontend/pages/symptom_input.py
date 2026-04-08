@@ -3,6 +3,7 @@ MediCheck - Symptom Input Page
 ===============================
 Allows users to select symptoms from categorised groups and
 submit them to the FastAPI backend for analysis.
+Dynamically builds categories from the 132-symptom Kaggle dataset.
 """
 
 import streamlit as st
@@ -14,41 +15,77 @@ import httpx
 API_BASE = "http://localhost:8000"
 
 # ---------------------------------------------------------------------------
-# Symptom categories for better UX
+# Symptom categories for better UX (132 Kaggle symptoms organised)
 # ---------------------------------------------------------------------------
 SYMPTOM_CATEGORIES = {
     "🌡️ General / Systemic": [
-        "fever", "fatigue", "weakness", "chills", "sweating",
-        "weight_loss", "night_sweats", "loss_of_appetite",
+        "fatigue", "high_fever", "mild_fever", "chills", "shivering",
+        "sweating", "dehydration", "malaise", "lethargy", "restlessness",
+        "weight_loss", "weight_gain", "loss_of_appetite", "increased_appetite",
+        "obesity", "toxic_look_(typhos)", "altered_sensorium", "coma",
     ],
     "🫁 Respiratory": [
-        "cough", "shortness_of_breath", "wheezing", "chest_tightness",
-        "blood_in_sputum", "sore_throat", "runny_nose", "sneezing",
-        "nasal_congestion",
+        "cough", "breathlessness", "phlegm", "mucoid_sputum", "rusty_sputum",
+        "blood_in_sputum", "throat_irritation", "patches_in_throat",
+        "continuous_sneezing", "runny_nose", "congestion", "sinus_pressure",
+        "chest_pain",
     ],
-    "🧠 Neurological": [
-        "headache", "dizziness", "blurred_vision", "light_sensitivity",
-        "stiff_neck", "loss_of_smell", "loss_of_taste",
+    "🧠 Neurological / Mental": [
+        "headache", "dizziness", "spinning_movements", "loss_of_balance",
+        "unsteadiness", "weakness_of_one_body_side", "lack_of_concentration",
+        "visual_disturbances", "blurred_and_distorted_vision", "slurred_speech",
+        "loss_of_smell", "anxiety", "depression", "irritability", "mood_swings",
     ],
     "🦴 Musculoskeletal": [
-        "body_ache", "muscle_pain", "joint_pain", "back_pain",
+        "joint_pain", "knee_pain", "hip_joint_pain", "neck_pain",
+        "back_pain", "muscle_weakness", "muscle_wasting", "muscle_pain",
+        "stiff_neck", "swelling_joints", "movement_stiffness",
+        "weakness_in_limbs", "cramps", "painful_walking",
     ],
     "🫄 Gastrointestinal": [
-        "nausea", "vomiting", "diarrhea", "abdominal_pain",
-        "constipation",
+        "stomach_pain", "acidity", "ulcers_on_tongue", "vomiting",
+        "nausea", "diarrhoea", "constipation", "abdominal_pain",
+        "belly_pain", "indigestion", "passage_of_gases",
+        "stomach_bleeding", "distention_of_abdomen",
     ],
     "💓 Cardiovascular": [
-        "chest_pain", "rapid_heartbeat", "high_blood_pressure",
-        "pale_skin",
+        "fast_heart_rate", "palpitations", "swollen_blood_vessels",
+        "swollen_legs", "prominent_veins_on_calf", "cold_hands_and_feets",
     ],
     "🧪 Urinary / Metabolic": [
-        "frequent_urination", "burning_urination", "dark_urine",
-        "increased_thirst", "dry_mouth", "excessive_hunger",
+        "burning_micturition", "spotting_urination", "dark_urine",
+        "yellow_urine", "bladder_discomfort", "foul_smell_of_urine",
+        "continuous_feel_of_urine", "polyuria", "irregular_sugar_level",
+        "excessive_hunger",
     ],
-    "🩹 Skin / Other": [
-        "skin_rash", "itching", "yellow_skin", "bruising",
-        "swelling", "swollen_lymph_nodes", "red_eyes",
-        "watery_eyes", "facial_pain",
+    "🩹 Skin / Dermatological": [
+        "skin_rash", "nodal_skin_eruptions", "itching", "internal_itching",
+        "yellowish_skin", "dischromic_patches", "pus_filled_pimples",
+        "blackheads", "scurring", "skin_peeling", "silver_like_dusting",
+        "small_dents_in_nails", "inflammatory_nails", "blister",
+        "red_sore_around_nose", "yellow_crust_ooze", "bruising",
+        "red_spots_over_body",
+    ],
+    "👁️ Eyes / ENT": [
+        "sunken_eyes", "yellowing_of_eyes", "redness_of_eyes",
+        "watering_from_eyes", "pain_behind_the_eyes",
+    ],
+    "🫀 Liver / Hepatic": [
+        "yellowish_skin", "dark_urine", "acute_liver_failure",
+        "fluid_overload", "swelling_of_stomach",
+        "history_of_alcohol_consumption",
+    ],
+    "🔬 Blood / Immune": [
+        "swelled_lymph_nodes", "receiving_blood_transfusion",
+        "receiving_unsterile_injections", "extra_marital_contacts",
+        "family_history",
+    ],
+    "🦵 Other": [
+        "pain_during_bowel_movements", "pain_in_anal_region",
+        "bloody_stool", "irritation_in_anus",
+        "puffy_face_and_eyes", "enlarged_thyroid", "brittle_nails",
+        "swollen_extremeties", "drying_and_tingling_lips",
+        "abnormal_menstruation",
     ],
 }
 
@@ -64,7 +101,7 @@ def render_symptom_input():
     st.markdown("### 🔍 Select Your Symptoms")
     st.markdown(
         "<p style='color:#666; margin-bottom:1.5rem;'>"
-        "Choose the symptoms you are currently experiencing. "
+        "Choose the symptoms you are currently experiencing from the categories below. "
         "Select at least one to proceed.</p>",
         unsafe_allow_html=True,
     )
@@ -82,6 +119,9 @@ def render_symptom_input():
                         key=f"sym_{symptom}",
                     ):
                         selected.append(symptom)
+
+    # Deduplicate (some symptoms appear in multiple categories)
+    selected = list(dict.fromkeys(selected))
 
     # Summary & submit
     st.markdown("---")

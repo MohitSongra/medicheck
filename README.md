@@ -10,7 +10,7 @@
 
 ## Overview
 
-MediCheck is an AI-powered Medical Symptom Checker that uses a **Bayesian Network** to predict the most likely disease(s) based on user-entered symptoms. The system employs a Naive Bayes graphical model trained on synthetic healthcare data and performs inference via **Variable Elimination**.
+MediCheck is an AI-powered Medical Symptom Checker that uses a **Bayesian Network** to predict the most likely disease(s) based on user-entered symptoms. The system employs a Naive Bayes graphical model trained on the [Kaggle Disease Prediction dataset](https://www.kaggle.com/datasets/kaushil268/disease-prediction-using-machine-learning) (10,000+ rows, 41 diseases, 132 symptoms) and performs inference via **Variable Elimination**.
 
 ## 📸 Screenshot
 
@@ -41,8 +41,10 @@ MediCheck is an AI-powered Medical Symptom Checker that uses a **Bayesian Networ
 ```
 medicheck/
 ├── data/
-│   ├── disease_symptom.csv      # Training data (auto-generated)
-│   └── disease_info.json        # Disease descriptions & actions
+│   ├── download_kaggle.py       # Dataset downloader & augmenter
+│   ├── disease_symptom.csv      # Training data (10k+ rows)
+│   ├── disease_info.json        # Disease descriptions & actions (41 diseases)
+│   └── kaggle_raw/              # Raw Kaggle CSV files
 ├── model/
 │   ├── train.py                 # BN training pipeline
 │   ├── inference.py             # Variable Elimination inference
@@ -54,7 +56,7 @@ medicheck/
 ├── frontend/
 │   ├── app.py                   # Streamlit entry point
 │   └── pages/
-│       ├── symptom_input.py     # Symptom selection UI
+│       ├── symptom_input.py     # Symptom selection UI (132 symptoms)
 │       └── results.py           # Results visualisation
 ├── tests/
 │   ├── test_inference.py        # Model & inference tests
@@ -72,18 +74,29 @@ cd medicheck
 pip install -r requirements.txt
 ```
 
-### 2. Train the Model
+### 2. Download & Prepare Dataset
+
+```bash
+python -m data.download_kaggle
+```
+
+This will:
+- Download the Kaggle Disease Prediction dataset
+- Augment to 10,000+ rows using noise injection
+- Save `data/disease_symptom.csv`
+
+### 3. Train the Model
 
 ```bash
 python -m model.train
 ```
 
 This will:
-- Generate `data/disease_symptom.csv` (216 records, 18 diseases, 52 symptoms)
+- Load the dataset (10,000+ records, 41 diseases, 132 symptoms)
 - Train the Bayesian Network with BDeu priors
 - Save `model/bayesian_model.pkl`
 
-### 3. Start the API
+### 4. Start the API
 
 ```bash
 uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
@@ -91,7 +104,7 @@ uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
 
 API docs available at: `http://localhost:8000/docs`
 
-### 4. Launch the Frontend
+### 5. Launch the Frontend
 
 ```bash
 streamlit run frontend/app.py
@@ -99,7 +112,7 @@ streamlit run frontend/app.py
 
 Open `http://localhost:8501` in your browser.
 
-### 5. Run Tests
+### 6. Run Tests
 
 ```bash
 pytest tests/ -v
@@ -118,16 +131,17 @@ pytest tests/ -v
 ```bash
 curl -X POST http://localhost:8000/predict \
   -H "Content-Type: application/json" \
-  -d '{"symptoms": ["fever", "cough", "shortness_of_breath"]}'
+  -d '{"symptoms": ["itching", "skin_rash", "high_fever"]}'
 ```
 
 ## Model Details
 
-- **Structure:** Naive Bayes Bayesian Network (Disease → Symptom₁, Disease → Symptom₂, …)
+- **Structure:** Naive Bayes Bayesian Network (Disease -> Symptom_1, Disease -> Symptom_2, ...)
 - **Estimation:** Bayesian Estimation with BDeu prior (equivalent sample size = 5)
 - **Inference:** Variable Elimination for exact posterior computation
-- **Diseases:** 18 conditions across respiratory, neurological, metabolic, and infectious categories
-- **Symptoms:** 52 clinical features
+- **Dataset:** Kaggle Disease Prediction (10,000+ rows, augmented from ~5,000 original)
+- **Diseases:** 41 conditions across respiratory, dermatological, hepatic, metabolic, and infectious categories
+- **Symptoms:** 132 clinical features
 
 ## Environment Setup
 

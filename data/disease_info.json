@@ -1,74 +1,166 @@
 {
-  "Common_Cold": {
-    "description": "A viral infection of the upper respiratory tract affecting the nose and throat. Usually harmless and resolves within 7-10 days.",
-    "suggested_action": "Rest, stay hydrated, use OTC cold remedies. See a doctor if symptoms persist beyond 10 days."
+  "Fungal infection": {
+    "description": "An infection caused by fungi such as dermatophytes or yeast, commonly affecting the skin, nails, or mucous membranes.",
+    "suggested_action": "Keep the affected area clean and dry. Use antifungal creams or medications as prescribed by a doctor."
   },
-  "Influenza": {
-    "description": "A contagious respiratory illness caused by influenza viruses. More severe than the common cold with sudden onset.",
-    "suggested_action": "Rest, fluids, and antiviral medications if caught early. Seek medical care for high-risk individuals."
+  "Allergy": {
+    "description": "An immune system response to a foreign substance (allergen) that is typically not harmful, such as pollen, dust, or certain foods.",
+    "suggested_action": "Identify and avoid allergens. Use antihistamines or other prescribed medications. Seek emergency care for severe reactions."
   },
-  "COVID-19": {
-    "description": "Respiratory illness caused by the SARS-CoV-2 virus. Symptoms range from mild to severe and may include loss of taste/smell.",
-    "suggested_action": "Isolate immediately, get tested, monitor oxygen levels. Seek emergency care for breathing difficulties."
+  "GERD": {
+    "description": "Gastroesophageal Reflux Disease — a chronic condition where stomach acid flows back into the esophagus, causing heartburn and irritation.",
+    "suggested_action": "Avoid trigger foods, eat smaller meals, don't lie down after eating. Use antacids or prescribed medications."
   },
-  "Pneumonia": {
-    "description": "An infection that inflames air sacs in one or both lungs, which may fill with fluid. Can be life-threatening.",
-    "suggested_action": "Seek medical attention promptly. Antibiotics for bacterial pneumonia. Hospitalization may be required."
+  "Chronic cholestasis": {
+    "description": "A condition where bile flow from the liver is reduced or blocked, leading to accumulation of bile acids in the blood.",
+    "suggested_action": "Seek medical evaluation. Treatment depends on the underlying cause and may include medications or surgery."
   },
-  "Bronchitis": {
-    "description": "Inflammation of the bronchial tubes that carry air to the lungs, often producing persistent cough with mucus.",
-    "suggested_action": "Rest, fluids, humidifier use. See a doctor if cough lasts more than 3 weeks or produces blood."
+  "Drug Reaction": {
+    "description": "An adverse reaction to a medication, which can range from mild skin rashes to severe systemic responses.",
+    "suggested_action": "Stop the suspected medication immediately and consult your doctor. Seek emergency care for severe reactions."
   },
-  "Asthma": {
-    "description": "A chronic condition where airways narrow, swell, and produce extra mucus, making breathing difficult.",
-    "suggested_action": "Use prescribed inhalers. Develop an asthma action plan with your doctor. Avoid known triggers."
+  "Peptic ulcer diseae": {
+    "description": "Open sores that develop on the inner lining of the stomach or upper small intestine, often caused by H. pylori bacteria or NSAIDs.",
+    "suggested_action": "Avoid spicy foods, alcohol, and NSAIDs. Take prescribed proton pump inhibitors or antibiotics."
   },
-  "Allergic_Rhinitis": {
-    "description": "Inflammation of the nasal passages caused by an allergic response to airborne substances like pollen or dust.",
-    "suggested_action": "Avoid allergens, use antihistamines or nasal corticosteroids. Consider allergy testing."
+  "AIDS": {
+    "description": "Acquired Immunodeficiency Syndrome — the most advanced stage of HIV infection, severely weakening the immune system.",
+    "suggested_action": "Seek immediate medical care. Antiretroviral therapy (ART) is essential. Regular monitoring by an infectious disease specialist."
   },
-  "Sinusitis": {
-    "description": "Inflammation or swelling of the tissue lining the sinuses, often following a cold, causing facial pain and congestion.",
-    "suggested_action": "Use saline nasal spray, decongestants, and warm compresses. See a doctor if symptoms last >10 days."
-  },
-  "Tuberculosis": {
-    "description": "A serious bacterial infection primarily affecting the lungs, caused by Mycobacterium tuberculosis. Highly contagious.",
-    "suggested_action": "Seek immediate medical evaluation. TB requires a 6-9 month antibiotic regimen. Notify close contacts."
-  },
-  "Malaria": {
-    "description": "A life-threatening mosquito-borne disease caused by Plasmodium parasites. Characterized by cyclical fever and chills.",
-    "suggested_action": "Seek urgent medical treatment. Antimalarial drugs are essential. Prevention includes mosquito nets and repellents."
-  },
-  "Dengue_Fever": {
-    "description": "A mosquito-borne viral infection causing high fever, severe joint/muscle pain, and potentially hemorrhagic complications.",
-    "suggested_action": "Seek medical care immediately. Stay hydrated, use acetaminophen for pain. Avoid aspirin and NSAIDs."
-  },
-  "Typhoid_Fever": {
-    "description": "A bacterial infection caused by Salmonella typhi, spread through contaminated food and water.",
-    "suggested_action": "Seek medical diagnosis and antibiotic treatment. Maintain strict hygiene. Vaccination is recommended for travelers."
+  "Diabetes": {
+    "description": "A chronic metabolic condition characterized by high blood sugar levels due to insufficient insulin production or insulin resistance.",
+    "suggested_action": "Monitor blood sugar regularly. Follow a balanced diet, exercise, and take prescribed medications or insulin."
   },
   "Gastroenteritis": {
     "description": "Inflammation of the stomach and intestines, typically from viral or bacterial infection, causing vomiting and diarrhea.",
     "suggested_action": "Stay hydrated with oral rehydration solutions. Eat bland foods. See a doctor if symptoms are severe or prolonged."
   },
-  "Urinary_Tract_Infection": {
-    "description": "An infection in any part of the urinary system — kidneys, ureters, bladder, or urethra. Most common in the bladder.",
-    "suggested_action": "See a doctor for antibiotics. Drink plenty of water. Seek urgent care if fever develops or pain worsens."
-  },
-  "Migraine": {
-    "description": "A neurological condition characterized by intense, debilitating headaches often accompanied by nausea and light sensitivity.",
-    "suggested_action": "Rest in a dark, quiet room. Take prescribed migraine medication. Track triggers to prevent future episodes."
+  "Bronchial Asthma": {
+    "description": "A chronic respiratory condition where airways narrow and swell, producing extra mucus and making breathing difficult.",
+    "suggested_action": "Use prescribed inhalers and medications. Avoid triggers. Develop an asthma action plan with your doctor."
   },
   "Hypertension": {
     "description": "Persistently elevated blood pressure that increases risk of heart disease, stroke, and kidney problems. Often asymptomatic.",
-    "suggested_action": "Monitor blood pressure regularly. Adopt a low-sodium diet, exercise, and take prescribed medications."
+    "suggested_action": "Monitor blood pressure regularly. Adopt a low-sodium diet, exercise, manage stress, and take prescribed medications."
   },
-  "Diabetes_Type_2": {
-    "description": "A chronic metabolic condition where the body becomes resistant to insulin or doesn't produce enough, causing high blood sugar.",
-    "suggested_action": "Consult an endocrinologist. Monitor blood sugar, maintain a healthy diet, exercise regularly, and take prescribed medications."
+  "Migraine": {
+    "description": "A neurological condition characterized by intense, debilitating headaches often accompanied by nausea, vomiting, and light sensitivity.",
+    "suggested_action": "Rest in a dark, quiet room. Take prescribed migraine medication early. Track and avoid triggers."
   },
-  "Anemia": {
-    "description": "A condition where the blood lacks enough healthy red blood cells to carry adequate oxygen to tissues, causing fatigue.",
-    "suggested_action": "Get blood tests to determine cause. Iron supplements, dietary changes, or treating underlying conditions may be needed."
+  "Cervical spondylosis": {
+    "description": "Age-related wear and tear of the spinal discs in the neck (cervical spine), which can cause pain, stiffness, and nerve compression.",
+    "suggested_action": "Physical therapy, neck exercises, pain management. Consult an orthopedic specialist for severe cases."
+  },
+  "Paralysis (brain hemorrhage)": {
+    "description": "Loss of muscle function in part of the body, often caused by bleeding in the brain (hemorrhagic stroke).",
+    "suggested_action": "This is a medical emergency. Call emergency services immediately. Early treatment is critical for recovery."
+  },
+  "Jaundice": {
+    "description": "Yellowing of the skin and eyes caused by elevated bilirubin levels, indicating liver dysfunction or bile duct obstruction.",
+    "suggested_action": "Seek medical evaluation to determine the underlying cause. Treatment varies based on the root condition."
+  },
+  "Malaria": {
+    "description": "A life-threatening mosquito-borne disease caused by Plasmodium parasites, characterized by cyclical fever and chills.",
+    "suggested_action": "Seek urgent medical treatment. Antimalarial drugs are essential. Prevention includes mosquito nets and repellents."
+  },
+  "Chicken pox": {
+    "description": "A highly contagious viral infection caused by the varicella-zoster virus, producing an itchy rash with fluid-filled blisters.",
+    "suggested_action": "Rest, use calamine lotion for itch relief, take antihistamines. Avoid scratching to prevent scarring. Vaccination is recommended."
+  },
+  "Dengue": {
+    "description": "A mosquito-borne viral infection causing high fever, severe joint/muscle pain, and potentially hemorrhagic complications.",
+    "suggested_action": "Seek medical care immediately. Stay hydrated, use acetaminophen for pain. Avoid aspirin and NSAIDs."
+  },
+  "Typhoid": {
+    "description": "A bacterial infection caused by Salmonella typhi, spread through contaminated food and water, causing prolonged fever.",
+    "suggested_action": "Seek medical diagnosis and antibiotic treatment. Maintain strict hygiene. Vaccination is recommended for travelers."
+  },
+  "hepatitis A": {
+    "description": "A highly contagious liver infection caused by the hepatitis A virus, usually transmitted through contaminated food or water.",
+    "suggested_action": "Rest, maintain hydration, avoid alcohol. Most cases resolve on their own. Vaccination provides prevention."
+  },
+  "Hepatitis B": {
+    "description": "A serious liver infection caused by the hepatitis B virus, transmitted through blood and body fluids. Can become chronic.",
+    "suggested_action": "Seek medical evaluation. Antiviral medications may be needed for chronic cases. Vaccination is available."
+  },
+  "Hepatitis C": {
+    "description": "A viral infection causing liver inflammation, primarily spread through blood contact. Often chronic and can lead to liver damage.",
+    "suggested_action": "Consult a hepatologist. Modern antiviral treatments can cure most cases. Regular liver function monitoring."
+  },
+  "Hepatitis D": {
+    "description": "A liver infection caused by the hepatitis D virus, which only occurs in people already infected with hepatitis B.",
+    "suggested_action": "Seek specialist care. Treatment focuses on managing hepatitis B. Hepatitis B vaccination prevents hepatitis D."
+  },
+  "Hepatitis E": {
+    "description": "A liver infection caused by the hepatitis E virus, typically transmitted through contaminated water. Usually self-limiting.",
+    "suggested_action": "Rest, stay hydrated, avoid alcohol. Most cases resolve spontaneously. Pregnant women should seek immediate medical care."
+  },
+  "Alcoholic hepatitis": {
+    "description": "Liver inflammation caused by excessive alcohol consumption, leading to liver cell damage and potential liver failure.",
+    "suggested_action": "Stop alcohol consumption immediately. Seek medical treatment. Nutritional support and medication may be needed."
+  },
+  "Tuberculosis": {
+    "description": "A serious bacterial infection primarily affecting the lungs, caused by Mycobacterium tuberculosis. Highly contagious.",
+    "suggested_action": "Seek immediate medical evaluation. TB requires a 6-9 month antibiotic regimen. Notify close contacts."
+  },
+  "Common Cold": {
+    "description": "A viral infection of the upper respiratory tract affecting the nose and throat. Usually harmless and resolves within 7-10 days.",
+    "suggested_action": "Rest, stay hydrated, use OTC cold remedies. See a doctor if symptoms persist beyond 10 days."
+  },
+  "Pneumonia": {
+    "description": "An infection that inflames air sacs in one or both lungs, which may fill with fluid or pus. Can be life-threatening.",
+    "suggested_action": "Seek medical attention promptly. Antibiotics for bacterial pneumonia. Hospitalization may be required for severe cases."
+  },
+  "Dimorphic hemmorhoids(piles)": {
+    "description": "Swollen blood vessels in the rectal area that can be internal or external, causing pain, bleeding, and discomfort.",
+    "suggested_action": "Increase fiber intake, stay hydrated, use topical treatments. Consult a doctor for persistent or severe cases."
+  },
+  "Heart attack": {
+    "description": "A medical emergency where blood flow to the heart is blocked, causing heart muscle damage. Requires immediate treatment.",
+    "suggested_action": "Call emergency services immediately. Chew an aspirin if available. Time is critical — every minute counts."
+  },
+  "Varicose veins": {
+    "description": "Enlarged, twisted veins usually in the legs, caused by weakened valves and vein walls. Can cause aching and swelling.",
+    "suggested_action": "Exercise regularly, elevate legs, wear compression stockings. Consult a vascular specialist for treatment options."
+  },
+  "Hypothyroidism": {
+    "description": "A condition where the thyroid gland doesn't produce enough hormones, leading to fatigue, weight gain, and cold sensitivity.",
+    "suggested_action": "Take prescribed thyroid hormone replacement. Regular blood tests to monitor levels. Follow up with an endocrinologist."
+  },
+  "Hyperthyroidism": {
+    "description": "A condition where the thyroid gland produces too much thyroid hormone, causing rapid heartbeat, weight loss, and anxiety.",
+    "suggested_action": "Consult an endocrinologist. Treatment options include medications, radioactive iodine, or surgery."
+  },
+  "Hypoglycemia": {
+    "description": "Abnormally low blood sugar levels that can cause shakiness, confusion, and in severe cases, loss of consciousness.",
+    "suggested_action": "Consume fast-acting sugar immediately (juice, candy). Monitor blood sugar levels. Consult your doctor to adjust medications."
+  },
+  "Osteoarthristis": {
+    "description": "A degenerative joint disease where cartilage breaks down, causing pain, stiffness, and reduced joint mobility.",
+    "suggested_action": "Stay active with low-impact exercise. Use pain relievers as directed. Physical therapy and weight management help."
+  },
+  "Arthritis": {
+    "description": "Inflammation of one or more joints, causing pain, swelling, and stiffness. Includes rheumatoid and other inflammatory types.",
+    "suggested_action": "Consult a rheumatologist. Treatment may include anti-inflammatory medications, physical therapy, and lifestyle changes."
+  },
+  "(vertigo) Paroymsal  Positional Vertigo": {
+    "description": "A disorder causing brief episodes of dizziness related to changes in head position, caused by displaced inner ear crystals.",
+    "suggested_action": "Perform Epley maneuver exercises. Avoid sudden head movements. Consult an ENT specialist if symptoms persist."
+  },
+  "Acne": {
+    "description": "A skin condition where hair follicles become clogged with oil and dead skin cells, causing pimples, blackheads, and cysts.",
+    "suggested_action": "Maintain a gentle skincare routine. Use prescribed topical or oral medications. Avoid picking at affected areas."
+  },
+  "Urinary tract infection": {
+    "description": "An infection in any part of the urinary system — kidneys, ureters, bladder, or urethra. Most common in the bladder.",
+    "suggested_action": "See a doctor for antibiotics. Drink plenty of water. Seek urgent care if fever develops or pain worsens."
+  },
+  "Psoriasis": {
+    "description": "A chronic autoimmune skin condition causing rapid skin cell buildup, resulting in scaling, redness, and inflammation.",
+    "suggested_action": "Use prescribed topical treatments, phototherapy, or systemic medications. Moisturize regularly. Manage stress triggers."
+  },
+  "Impetigo": {
+    "description": "A highly contagious bacterial skin infection producing red sores that rupture, ooze, and form a yellow-brown crust.",
+    "suggested_action": "Keep the area clean. Apply prescribed antibiotic ointment. Avoid touching or scratching sores. Practice good hygiene."
   }
 }
