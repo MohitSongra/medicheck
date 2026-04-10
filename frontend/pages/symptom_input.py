@@ -71,7 +71,7 @@ SYMPTOM_CATEGORIES = {
         "watering_from_eyes", "pain_behind_the_eyes",
     ],
     "🫀 Liver / Hepatic": [
-        "yellowish_skin", "dark_urine", "acute_liver_failure",
+        "acute_liver_failure",
         "fluid_overload", "swelling_of_stomach",
         "history_of_alcohol_consumption",
     ],
