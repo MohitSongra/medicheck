@@ -55,9 +55,9 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
 # Run as non-root user
+RUN chmod +x start.sh
 USER appuser
 
 EXPOSE 8000 8501
 
-RUN chmod +x start.sh
 CMD ["./start.sh"]
