@@ -5,6 +5,7 @@ Handles the disclaimer gate and page navigation.
 """
 
 import os
+import streamlit as st
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -17,8 +18,6 @@ load_dotenv(PROJECT_ROOT / ".env")
 
 APP_ENV = os.getenv("APP_ENV", "production")
 DEBUG = os.getenv("DEBUG", "False") == "True"
-
-import streamlit as st
 
 # ---------------------------------------------------------------------------
 # Page config  (MUST be first Streamlit command)
@@ -36,7 +35,7 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');  # noqa: E501
 
     html, body, [class*="css"] {
         font-family: 'Inter', sans-serif;

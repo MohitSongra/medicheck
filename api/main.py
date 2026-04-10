@@ -6,16 +6,25 @@ predictions from the Bayesian Network inference engine.
 """
 
 import os
+import sys
 import time
 from contextlib import asynccontextmanager
+from pathlib import Path
 from typing import List
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-import sys
-from pathlib import Path
+from model.inference import MediCheckInference
+from api.schemas import (
+    SymptomRequest,
+    PredictionResponse,
+    DiseaseResult,
+    HealthResponse,
+    SymptomListResponse,
+)
+from api.utils import get_disease_details, format_disease_name
 
 # Ensure project root is on sys.path so model/ is importable
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -30,16 +39,6 @@ load_dotenv(PROJECT_ROOT / ".env")
 APP_ENV = os.getenv("APP_ENV", "production")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "http://localhost:8501").split(",")
-
-from model.inference import MediCheckInference
-from api.schemas import (
-    SymptomRequest,
-    PredictionResponse,
-    DiseaseResult,
-    HealthResponse,
-    SymptomListResponse,
-)
-from api.utils import get_disease_details, format_disease_name
 
 # ---------------------------------------------------------------------------
 # Global inference engine (loaded once at startup)

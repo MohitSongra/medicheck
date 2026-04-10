@@ -8,7 +8,7 @@ prediction via Variable Elimination given observed symptoms.
 import pickle
 import time
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import List, Optional
 
 from pgmpy.inference import VariableElimination
 
