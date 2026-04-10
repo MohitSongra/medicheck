@@ -41,7 +41,6 @@ COPY data/disease_symptom.csv ./data/disease_symptom.csv
 COPY data/download_kaggle.py ./data/download_kaggle.py
 COPY start.sh .
 COPY requirements.txt .
-COPY .env.example .
 
 # Never copy .env — inject at runtime via --env-file or -e flags
 # .env is already in .dockerignore
