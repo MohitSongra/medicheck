@@ -1,0 +1,33 @@
+# ===========================================================
+# MediCheck — .dockerignore
+# Keep the Docker context lean
+# ===========================================================
+
+.git/
+.gitignore
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+htmlcov/
+.coverage
+*.egg-info/
+dist/
+build/
+data/kaggle_raw/
+docs/
+tests/
+requirements-dev.txt
+.env
+.env.*
+*.md
+!README.md
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
