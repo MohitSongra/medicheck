@@ -5,10 +5,12 @@ REST API gateway that receives symptoms and returns ranked disease
 predictions from the Bayesian Network inference engine.
 """
 
+import os
 import time
 from contextlib import asynccontextmanager
 from typing import List
 
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -19,6 +21,15 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
+
+# ---------------------------------------------------------------------------
+# Load environment variables from .env
+# ---------------------------------------------------------------------------
+load_dotenv(PROJECT_ROOT / ".env")
+
+APP_ENV = os.getenv("APP_ENV", "production")
+DEBUG = os.getenv("DEBUG", "False") == "True"
+ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "http://localhost:8501").split(",")
 
 from model.inference import MediCheckInference
 from api.schemas import (
@@ -65,7 +76,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
