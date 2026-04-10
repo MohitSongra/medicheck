@@ -7,7 +7,6 @@ predictions from the Bayesian Network inference engine.
 
 import os
 import sys
-import time
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import List
