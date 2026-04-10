@@ -33,6 +33,9 @@ jobs:
           flake8 api/ model/ frontend/ --max-line-length=100 \
             --exclude=__pycache__
 
+      - name: Train model
+        run: python -m model.train
+
       - name: Run tests
         run: |
           pytest tests/ -v --tb=short

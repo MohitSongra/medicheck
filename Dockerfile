@@ -47,12 +47,16 @@ COPY requirements.txt .
 
 # Environment
 ENV PATH=/home/appuser/.local/bin:$PATH \
+    PYTHONPATH=/home/appuser/.local/lib/python3.11/site-packages \
     PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
+
+# Generate the ML model artifact before dropping privileges
+RUN python -m model.train
 
 # Run as non-root user
 RUN chmod +x start.sh
